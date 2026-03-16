@@ -1,0 +1,28 @@
+# NoteIQ v16 – Replit requirements.txt
+# Installieren: pip install -r requirements.txt
+
+# ── Web-Framework ──────────────────────────────────────────────────────────
+flask>=3.0.0
+flask-cors>=4.0.0          # CORS für Browser-Requests
+
+# ── KI / API ──────────────────────────────────────────────────────────────
+groq>=0.9.0                # Groq (llama-3.3-70b, kostenlos)
+openai>=1.30.0             # OpenAI (optional, Fallback)
+requests>=2.31.0           # ElevenLabs TTS HTTP-Requests
+
+# ── Stripe Bezahlschranke ─────────────────────────────────────────────────
+stripe>=8.0.0
+
+# ── Audio-Analyse ─────────────────────────────────────────────────────────
+numpy>=1.24.0              # FFT, YIN Pitch-Detection
+scipy>=1.11.0              # find_peaks (optional, verbessert Analyse)
+
+# ── Kamera / Computer Vision ──────────────────────────────────────────────
+opencv-python-headless>=4.8.0   # headless = kein GUI, besser für Server
+mediapipe>=0.10.0               # Hand-Tracking (optional, CPU-intensiv)
+
+# ── Umgebungsvariablen ────────────────────────────────────────────────────
+python-dotenv>=1.0.0       # .env Datei laden (lokal; Replit nutzt Secrets)
+
+# ── Produktions-Server (Replit empfiehlt gunicorn) ────────────────────────
+gunicorn>=21.2.0
